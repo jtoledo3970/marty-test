@@ -66,6 +66,23 @@
             border-radius: 50%;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
+
+        /* Style for the mobile menu */
+        .mobile-menu-links {
+            display: none;
+            flex-direction: column;
+            width: 100%;
+            background-color: #1a202c;
+            padding: 1rem 0;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            text-align: center;
+        }
+
+        .mobile-menu-links.active {
+            display: flex;
+        }
     </style>
 </head>
 <body class="antialiased bg-gray-950 text-gray-100">
@@ -79,31 +96,37 @@
 
     <!-- Header & Navigation Bar -->
     <header class="bg-gray-900 shadow-lg fixed top-0 left-0 w-full z-50">
-        <nav class="container mx-auto flex items-center justify-between p-4 md:p-6">
+        <nav class="container mx-auto flex items-center justify-between p-4 md:p-6 relative">
             <!-- Left-hand side of nav: Logo and Title -->
             <div class="flex items-center space-x-4">
                 <!-- Placeholder for the logo -->
-                <img src="logo.png" alt="Elite Team Logo" class="h-14 w-14 rounded-full">
+                <img src="https://placehold.co/56x56/f8f8f8/262626?text=Logo" alt="Elite Team Logo" class="h-14 w-14 rounded-full">
                 <a href="#" class="text-2xl font-bold text-red-500">Elite Team - Fresno BJJ</a>
             </div>
             
             <!-- Right-hand side of nav: Links and CTA -->
-            <div class="flex items-center space-x-4">
-                <a href="#schedule" class="hidden md:block font-semibold text-white hover:text-red-500 transition-colors duration-300">
+            <div class="flex items-center space-x-4 hidden md:flex">
+                <a href="#schedule" class="font-semibold text-white hover:text-red-500 transition-colors duration-300">
                     Schedule
                 </a>
                 <!-- CTA Button -->
-                <a href="#contact" class="hidden md:block bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-6 rounded-full transition duration-300 ease-in-out transform hover:scale-105">
+                <a href="#contact" class="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-6 rounded-full transition duration-300 ease-in-out transform hover:scale-105">
                     Join Now!
                 </a>
             </div>
 
-            <!-- Mobile Menu Button (Optional, for future use) -->
-            <button class="md:hidden text-white focus:outline-none">
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
                 </svg>
             </button>
+            
+            <!-- Mobile Menu Links -->
+            <div id="mobile-menu-links" class="mobile-menu-links md:hidden">
+                <a href="#schedule" class="block p-4 text-white hover:bg-gray-800">Schedule</a>
+                <a href="#contact" class="block p-4 bg-red-600 text-white hover:bg-red-700">Join Now!</a>
+            </div>
         </nav>
     </header>
     
@@ -149,9 +172,16 @@
             <h2 class="text-3xl md:text-4xl font-bold text-center text-red-500 mb-8">
                 Class Schedule
             </h2>
-            <div class="bg-gray-900 rounded-lg shadow-xl overflow-hidden">
+            <div id="schedule-card" class="bg-gray-900 rounded-lg shadow-xl overflow-hidden cursor-pointer">
                 <!-- IMPORTANT: To update the schedule, simply replace the image source (src) below. -->
                 <img id="schedule-image" src="https://placehold.co/1200x800/262626/f8f8f8?text=Your+Schedule+Image+Here" alt="Current BJJ Class Schedule" class="w-full h-auto object-cover">
+            </div>
+            <!-- Schedule Modal -->
+            <div id="schedule-modal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-[100] hidden">
+                <div class="fixed top-4 right-4 text-white hover:text-red-500 close-modal cursor-pointer text-4xl leading-none z-[101]">&times;</div>
+                <div class="bg-gray-900 rounded-lg shadow-xl max-w-5xl w-full relative m-4">
+                    <img id="schedule-modal-image" src="https://placehold.co/1200x800/262626/f8f8f8?text=Your+Schedule+Image+Here" alt="Current BJJ Class Schedule" class="w-full h-auto object-cover rounded-lg">
+                </div>
             </div>
         </section>
 
@@ -207,11 +237,11 @@
         <div class="flex justify-center items-center space-x-4 mb-4">
             <p class="font-bold text-white">Follow Us</p>
             <!-- Facebook Icon -->
-            <a href="https://www.facebook.com/profile.php?id=100073587157585" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-red-500 transition-colors duration-300">
+            <a href="https://www.facebook.com/eliteteambjj/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-red-500 transition-colors duration-300">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm3 8h-1.5c-.552 0-.853.298-.853.844v1.156h2.479l-.343 2h-2.136v6h-3v-6h-2v-2h2v-1.923c0-2.062 1.159-3.077 3.69-3.077h2.31v2z"/></svg>
             </a>
             <!-- Instagram Icon -->
-            <a href="https://www.instagram.com/elite_team_fresno/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-red-500 transition-colors duration-300">
+            <a href="https://www.instagram.com/eliteteamfresno/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-red-500 transition-colors duration-300">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.772 1.667 4.921 4.919.058 1.267.069 1.647.069 4.849 0 3.203-.012 3.584-.069 4.849-.149 3.252-1.667-4.771-4.92 4.919-1.266.058-1.647.069-4.849.069-3.204 0-3.584-.012-4.849-.069-3.251-.148-4.77-1.667-4.919-4.919-.058-1.267-.069-1.647-.069-4.849 0-3.203.012-3.584.069-4.849.149-3.251 1.667-4.77 4.919-4.919 1.266-.057 1.647-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.201-6.78 2.623-6.981 6.981-.058 1.281-.072 1.689-.072 4.948 0 3.259.014 3.668.072 4.948.201 4.357 2.623 6.78 6.981 6.981 1.28.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.201 6.782-2.623 6.981-6.981.058-1.28.072-1.689.072-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.981-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
             </a>
         </div>
@@ -365,6 +395,29 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
+        // --- SCHEDULE MODAL ---
+        const scheduleCard = document.getElementById('schedule-card');
+        const scheduleModal = document.getElementById('schedule-modal');
+        const scheduleCloseBtn = scheduleModal.querySelector('.close-modal');
+
+        scheduleCard.addEventListener('click', () => {
+            scheduleModal.classList.remove('hidden');
+        });
+
+        scheduleModal.addEventListener('click', (event) => {
+            if (event.target === scheduleModal || event.target.closest('.close-modal')) {
+                scheduleModal.classList.add('hidden');
+            }
+        });
+
+        // --- MOBILE MENU TOGGLE ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenuLinks = document.getElementById('mobile-menu-links');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenuLinks.classList.toggle('active');
+        });
+        
         // Render coaches on page load
         renderCoaches();
     </script>
