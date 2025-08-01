@@ -11,11 +11,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Base styles for dark mode are defined in the body and Tailwind config */
+        /* This style block now only contains non-color specific rules */
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0d0d0d;
-            color: #f8f8f8;
         }
 
         /* Custom CSS for the hero image slideshow */
@@ -68,20 +66,9 @@
             border-radius: 50%;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
-
-        /* Light mode-specific styles for the sun icon */
-        .light-mode-icon {
-            display: none;
-        }
-        .dark .light-mode-icon {
-            display: block;
-        }
-        .dark .dark-mode-icon {
-            display: none;
-        }
     </style>
 </head>
-<body class="antialiased">
+<body class="antialiased bg-gray-950 text-gray-100">
 
     <!-- Scroll to Top Button -->
     <button id="scrollToTopBtn" title="Go to top">
@@ -91,25 +78,20 @@
     </button>
 
     <!-- Header & Navigation Bar -->
-    <header class="bg-[#1a1a1a] dark:bg-white shadow-lg fixed top-0 left-0 w-full z-50">
+    <header class="bg-gray-900 shadow-lg fixed top-0 left-0 w-full z-50">
         <nav class="container mx-auto flex items-center justify-between p-4 md:p-6">
-            <a href="#" class="text-2xl font-bold text-red-500">Elite Team - Fresno BJJ</a>
-            
+            <!-- Left-hand side of nav: Logo and Title -->
             <div class="flex items-center space-x-4">
-                <a href="#schedule" class="hidden md:block font-semibold text-white dark:text-gray-800 hover:text-red-500 transition-colors duration-300">
+                <!-- Placeholder for the logo -->
+                <img src="logo.png" alt="Elite Team Logo" class="h-14 w-14 rounded-full">
+                <a href="#" class="text-2xl font-bold text-red-500">Elite Team - Fresno BJJ</a>
+            </div>
+            
+            <!-- Right-hand side of nav: Links and CTA -->
+            <div class="flex items-center space-x-4">
+                <a href="#schedule" class="hidden md:block font-semibold text-white hover:text-red-500 transition-colors duration-300">
                     Schedule
                 </a>
-                <!-- Dark Mode Toggle Button -->
-                <button id="darkModeToggle" class="text-white dark:text-gray-800 hover:text-red-500 transition-colors duration-300">
-                    <!-- Sun Icon (for dark mode) -->
-                    <svg class="dark-mode-icon h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                    </svg>
-                    <!-- Moon Icon (for light mode) -->
-                    <svg class="light-mode-icon h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
-                    </svg>
-                </button>
                 <!-- CTA Button -->
                 <a href="#contact" class="hidden md:block bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-6 rounded-full transition duration-300 ease-in-out transform hover:scale-105">
                     Join Now!
@@ -117,7 +99,7 @@
             </div>
 
             <!-- Mobile Menu Button (Optional, for future use) -->
-            <button class="md:hidden text-white dark:text-gray-800 focus:outline-none">
+            <button class="md:hidden text-white focus:outline-none">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
                 </svg>
@@ -151,7 +133,7 @@
             <h2 class="text-3xl md:text-4xl font-bold text-center text-red-500 mb-8">
                 About Us
             </h2>
-            <div class="bg-[#1a1a1a] dark:bg-gray-100 p-6 md:p-10 rounded-lg shadow-xl text-lg md:text-xl leading-relaxed text-gray-200 dark:text-gray-800">
+            <div class="bg-gray-900 text-gray-200 p-6 md:p-10 rounded-lg shadow-xl text-lg md:text-xl leading-relaxed">
                 <!-- About Us content is now a simple, readable block of paragraphs -->
                 <p>
                     Elite Team Fresno is a Brazilian Jiu-Jitsu school that provides high-quality classes from some of the valley's greatest Jiu-Jitsu competitors. Our mission is to provide a safe, supportive, and challenging environment where students of all ages and skill levels can grow and achieve their personal goals.
@@ -167,7 +149,7 @@
             <h2 class="text-3xl md:text-4xl font-bold text-center text-red-500 mb-8">
                 Class Schedule
             </h2>
-            <div class="bg-[#1a1a1a] dark:bg-gray-100 rounded-lg shadow-xl overflow-hidden">
+            <div class="bg-gray-900 rounded-lg shadow-xl overflow-hidden">
                 <!-- IMPORTANT: To update the schedule, simply replace the image source (src) below. -->
                 <img id="schedule-image" src="https://placehold.co/1200x800/262626/f8f8f8?text=Your+Schedule+Image+Here" alt="Current BJJ Class Schedule" class="w-full h-auto object-cover">
             </div>
@@ -178,52 +160,8 @@
             <h2 class="text-3xl md:text-4xl font-bold text-center text-red-500 mb-12">
                 Our Coaches
             </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Coach 1 -->
-                <div id="coach-1" class="bg-[#1a1a1a] dark:bg-gray-100 rounded-lg shadow-xl overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-105">
-                    <img src="https://placehold.co/600x600/262626/f8f8f8?text=Marty+Robles" alt="Marty Robles" class="w-full h-64 object-cover">
-                    <div class="p-6 text-center">
-                        <h3 class="text-2xl font-bold text-white dark:text-gray-800">Professor Marty Robles</h3>
-                        <p class="text-red-500 font-semibold mt-2">Head Instructor</p>
-                        <div class="coach-bio mt-4 text-gray-400 dark:text-gray-600">
-                            <p>Head Coach Marty Robles has been practicing BJJ for over 10 years and received his black belt from Tom Knox, Elite Team's Program Director.</p>
-                            <p class="hidden more-bio mt-2 text-sm">
-                                Marty is a multiple-time competition winner and is dedicated to passing on his wealth of knowledge to students of all ages. His passion for the sport is evident in every class he teaches.
-                            </p>
-                        </div>
-                        <button class="toggle-bio mt-4 text-red-500 font-bold text-sm">Read More</button>
-                    </div>
-                </div>
-                <!-- Coach 2 -->
-                <div id="coach-2" class="bg-[#1a1a1a] dark:bg-gray-100 rounded-lg shadow-xl overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-105">
-                    <img src="https://placehold.co/600x600/262626/f8f8f8?text=Coach+2" alt="Coach's Name" class="w-full h-64 object-cover">
-                    <div class="p-6 text-center">
-                        <h3 class="text-2xl font-bold text-white dark:text-gray-800">Coach Jane Smith</h3>
-                        <p class="text-red-500 font-semibold mt-2">Kids Program Director</p>
-                        <div class="coach-bio mt-4 text-gray-400 dark:text-gray-600">
-                            <p>Specializes in developing young athletes. Her passion for Jiu Jitsu and positive attitude make learning fun for kids.</p>
-                            <p class="hidden more-bio mt-2 text-sm">
-                                Jane is a brown belt and has been coaching for over 5 years. She is known for her patience and ability to break down complex techniques into simple, easy-to-understand steps for children.
-                            </p>
-                        </div>
-                        <button class="toggle-bio mt-4 text-red-500 font-bold text-sm">Read More</button>
-                    </div>
-                </div>
-                <!-- Coach 3 -->
-                <div id="coach-3" class="bg-[#1a1a1a] dark:bg-gray-100 rounded-lg shadow-xl overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-105">
-                    <img src="https://placehold.co/600x600/262626/f8f8f8?text=Coach+3" alt="Coach's Name" class="w-full h-64 object-cover">
-                    <div class="p-6 text-center">
-                        <h3 class="text-2xl font-bold text-white dark:text-gray-800">Instructor Mike Johnson</h3>
-                        <p class="text-red-500 font-semibold mt-2">Advanced Class Instructor</p>
-                        <div class="coach-bio mt-4 text-gray-400 dark:text-gray-600">
-                            <p>A fierce competitor and dedicated coach, he brings a modern, competition-focused perspective to our advanced classes.</p>
-                            <p class="hidden more-bio mt-2 text-sm">
-                                Mike is a black belt and an active competitor on the tournament scene. He specializes in leg locks and modern BJJ techniques, ensuring our advanced students are always ahead of the curve.
-                            </p>
-                        </div>
-                        <button class="toggle-bio mt-4 text-red-500 font-bold text-sm">Read More</button>
-                    </div>
-                </div>
+            <div id="coaches-container" class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                <!-- Coach cards will be dynamically inserted here by JavaScript -->
             </div>
         </section>
 
@@ -232,24 +170,24 @@
             <h2 class="text-3xl md:text-4xl font-bold text-center text-red-500 mb-8">
                 Contact & Free Trial
             </h2>
-            <div class="bg-[#1a1a1a] dark:bg-gray-100 p-6 md:p-10 rounded-lg shadow-xl">
+            <div class="bg-gray-900 p-6 md:p-10 rounded-lg shadow-xl">
                 <div class="flex flex-col lg:flex-row lg:justify-between lg:items-center">
                     <div class="lg:w-1/2 mb-8 lg:mb-0">
-                        <p class="text-lg md:text-xl text-gray-300 dark:text-gray-700">
+                        <p class="text-lg md:text-xl text-gray-300">
                             Ready to start your journey? Contact us today to schedule your free trial class!
                         </p>
                         <div class="mt-6 space-y-4">
                             <div>
                                 <p class="text-red-500 font-bold">Address:</p>
-                                <p class="text-gray-300 dark:text-gray-700">4177 W Shaw Ave Suite 111, Fresno, CA 93722</p>
+                                <p class="text-gray-300">4177 W Shaw Ave Suite 111, Fresno, CA 93722</p>
                             </div>
                             <div>
                                 <p class="text-red-500 font-bold">Phone:</p>
-                                <p class="text-gray-300 dark:text-gray-700">(559) 555-1234</p>
+                                <p class="text-gray-300">(559) 555-1234</p>
                             </div>
                             <div>
                                 <p class="text-red-500 font-bold">Email:</p>
-                                <p class="text-gray-300 dark:text-gray-700">info@eliteteamfresno.com</p>
+                                <p class="text-gray-300">info@eliteteamfresno.com</p>
                             </div>
                         </div>
                     </div>
@@ -265,15 +203,15 @@
     </main>
     
     <!-- Footer -->
-    <footer class="bg-[#111111] dark:bg-gray-200 p-6 text-center text-gray-500">
+    <footer class="bg-gray-900 p-6 text-center text-gray-500">
         <div class="flex justify-center items-center space-x-4 mb-4">
-            <p class="font-bold text-white dark:text-gray-800">Follow Us</p>
+            <p class="font-bold text-white">Follow Us</p>
             <!-- Facebook Icon -->
-            <a href="https://www.facebook.com/eliteteambjj/" target="_blank" rel="noopener noreferrer" class="text-gray-400 dark:text-gray-600 hover:text-red-500 transition-colors duration-300">
+            <a href="https://www.facebook.com/profile.php?id=100073587157585" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-red-500 transition-colors duration-300">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm3 8h-1.5c-.552 0-.853.298-.853.844v1.156h2.479l-.343 2h-2.136v6h-3v-6h-2v-2h2v-1.923c0-2.062 1.159-3.077 3.69-3.077h2.31v2z"/></svg>
             </a>
             <!-- Instagram Icon -->
-            <a href="https://www.instagram.com/eliteteamfresno/" target="_blank" rel="noopener noreferrer" class="text-gray-400 dark:text-gray-600 hover:text-red-500 transition-colors duration-300">
+            <a href="https://www.instagram.com/elite_team_fresno/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-red-500 transition-colors duration-300">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.772 1.667 4.921 4.919.058 1.267.069 1.647.069 4.849 0 3.203-.012 3.584-.069 4.849-.149 3.252-1.667-4.771-4.92 4.919-1.266.058-1.647.069-4.849.069-3.204 0-3.584-.012-4.849-.069-3.251-.148-4.77-1.667-4.919-4.919-.058-1.267-.069-1.647-.069-4.849 0-3.203.012-3.584.069-4.849.149-3.251 1.667-4.77 4.919-4.919 1.266-.057 1.647-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.201-6.78 2.623-6.981 6.981-.058 1.281-.072 1.689-.072 4.948 0 3.259.014 3.668.072 4.948.201 4.357 2.623 6.78 6.981 6.981 1.28.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.201 6.782-2.623 6.981-6.981.058-1.28.072-1.689.072-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.981-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
             </a>
         </div>
@@ -281,7 +219,9 @@
         <p class="text-xs text-gray-600 mt-2">Made in Fresno with <span class="text-red-500">❤️</span></p>
     </footer>
 
-    <!-- JavaScript for Hero Image Slideshow, Dark Mode, and Coach Bio Toggles -->
+    <!-- All coach modals are dynamically generated in the script below -->
+
+    <!-- JavaScript for Hero Image Slideshow and Coach Bio Modals -->
     <script>
         // --- DYNAMIC CONTENT MANAGEMENT ---
         // Array of image URLs for the slideshow.
@@ -291,9 +231,51 @@
             'https://placehold.co/1920x1080/262626/f8f8f8?text=BJJ+Training+2',
             'https://placehold.co/1920x1080/262626/f8f8f8?text=BJJ+Training+3'
         ];
+        
+        // Coach data array. Add more objects to this array to add more coaches.
+        // You can easily update all coach info here without changing the HTML structure.
+        const coachesData = [
+            {
+                name: 'Marty Robles',
+                title: 'Head Instructor',
+                image: 'https://placehold.co/600x600/262626/f8f8f8?text=Marty+Robles',
+                bio: 'Head Coach Marty Robles has been practicing BJJ for over 10 years and received his black belt from Tom Knox, Elite Team\'s Program Director and Professor. Marty is a multiple-time competition winner and is dedicated to passing on his wealth of knowledge to students of all ages. His passion for the sport is evident in every class he teaches.'
+            },
+            {
+                name: 'Jane Smith',
+                title: 'Kids Program Director',
+                image: 'https://placehold.co/600x600/262626/f8f8f8?text=Coach+2',
+                bio: 'Specializes in developing young athletes. Her passion for Jiu Jitsu and positive attitude make learning fun for kids. Jane is a brown belt and has been coaching for over 5 years. She is known for her patience and ability to break down complex techniques into simple, easy-to-understand steps for children.'
+            },
+            {
+                name: 'Mike Johnson',
+                title: 'Advanced Class Instructor',
+                image: 'https://placehold.co/600x600/262626/f8f8f8?text=Coach+3',
+                bio: 'A fierce competitor and dedicated coach, he brings a modern, competition-focused perspective to our advanced classes. Mike is a black belt and an active competitor on the tournament scene. He specializes in leg locks and modern BJJ techniques, ensuring our advanced students are always ahead of the curve.'
+            },
+            {
+                name: 'Coach 4',
+                title: 'Instructor',
+                image: 'https://placehold.co/600x600/262626/f8f8f8?text=Coach+4',
+                bio: 'This is a placeholder bio for Coach 4. You can edit this text to add a custom biography for this coach.'
+            },
+            {
+                name: 'Coach 5',
+                title: 'Instructor',
+                image: 'https://placehold.co/600x600/262626/f8f8f8?text=Coach+5',
+                bio: 'This is a placeholder bio for Coach 5. You can edit this text to add a custom biography for this coach.'
+            },
+            {
+                name: 'Coach 6',
+                title: 'Instructor',
+                image: 'https://placehold.co/600x600/262626/f8f8f8?text=Coach+6',
+                bio: 'This is a placeholder bio for Coach 6. You can edit this text to add a custom biography for this coach.'
+            }
+        ];
 
         let currentSlide = 0;
         const slideContainer = document.querySelector('.slide-container');
+        const coachesContainer = document.getElementById('coaches-container');
 
         // Function to create and add a slide to the DOM
         function createSlide(imageUrl, isActive = false) {
@@ -303,11 +285,59 @@
             slideContainer.appendChild(slide);
         }
 
+        // Function to dynamically render coach cards and modals
+        function renderCoaches() {
+            // Clear existing coaches
+            coachesContainer.innerHTML = '';
+            
+            coachesData.forEach((coach, index) => {
+                // Create the coach card
+                const card = document.createElement('div');
+                card.id = `coach-${index + 1}`;
+                card.className = 'bg-gray-900 text-gray-200 rounded-lg shadow-xl overflow-hidden cursor-pointer transition-transform duration-300 hover:scale-105';
+                card.innerHTML = `
+                    <img src="${coach.image}" alt="${coach.name}" class="w-full h-32 object-cover">
+                    <div class="p-2 text-center">
+                        <h3 class="text-sm font-bold">${coach.name}</h3>
+                        <p class="text-xs text-red-500 font-semibold">${coach.title}</p>
+                    </div>
+                `;
+                coachesContainer.appendChild(card);
+
+                // Create the bio modal
+                const modal = document.createElement('div');
+                modal.id = `bio-modal-${index + 1}`;
+                modal.className = 'fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-[100] hidden';
+                modal.innerHTML = `
+                    <div class="absolute top-4 right-4 text-white hover:text-red-500 close-modal cursor-pointer text-4xl leading-none z-[101]">&times;</div>
+                    <div class="bg-gray-900 text-gray-200 p-6 rounded-lg shadow-xl max-w-lg w-full relative m-4">
+                        <img src="${coach.image}" alt="${coach.name}" class="w-full h-64 object-cover rounded-lg mb-4">
+                        <h3 class="text-2xl font-bold mb-2">${coach.name}</h3>
+                        <p class="text-red-500 font-semibold mb-4">${coach.title}</p>
+                        <p>${coach.bio}</p>
+                    </div>
+                `;
+                document.body.appendChild(modal);
+
+                // Add event listener to show the modal
+                card.addEventListener('click', () => {
+                    modal.classList.remove('hidden');
+                });
+
+                // Add event listener to close the modal by clicking the backdrop
+                modal.addEventListener('click', (event) => {
+                    if (event.target === modal || event.target.closest('.close-modal')) {
+                        modal.classList.add('hidden');
+                    }
+                });
+            });
+        }
+        
+        // --- PAGE INITIALIZATION ---
         // Initialize slides
         imageUrls.forEach((url, index) => {
             createSlide(url, index === 0);
         });
-
         const slides = document.querySelectorAll('.slide');
 
         // Function to show the next slide
@@ -319,26 +349,6 @@
 
         // Automatically change slide every 5 seconds
         setInterval(nextSlide, 5000);
-
-        // --- DARK MODE TOGGLE ---
-        const darkModeToggle = document.getElementById('darkModeToggle');
-        
-        // Check local storage for a theme preference
-        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-        }
-
-        darkModeToggle.addEventListener('click', () => {
-            if (document.documentElement.classList.contains('dark')) {
-                document.documentElement.classList.remove('dark');
-                localStorage.theme = 'light';
-            } else {
-                document.documentElement.classList.add('dark');
-                localStorage.theme = 'dark';
-            }
-        });
 
         // --- SCROLL TO TOP BUTTON ---
         const scrollToTopBtn = document.getElementById("scrollToTopBtn");
@@ -355,19 +365,8 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // --- COACH BIO TOGGLE ---
-        const toggleButtons = document.querySelectorAll('.toggle-bio');
-        toggleButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const moreBio = button.previousElementSibling.querySelector('.more-bio');
-                moreBio.classList.toggle('hidden');
-                if (button.innerText === 'Read More') {
-                    button.innerText = 'Read Less';
-                } else {
-                    button.innerText = 'Read More';
-                }
-            });
-        });
+        // Render coaches on page load
+        renderCoaches();
     </script>
 </body>
 </html>
