@@ -13,8 +13,8 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #1a202c; /* Dark background */
-            color: #e2e8f0; /* Light gray text */
+            background-color: #0d0d0d; /* Very dark background, closer to black */
+            color: #f8f8f8; /* Off-white text */
         }
         /* Custom CSS for the hero image slideshow */
         .slide-container {
@@ -78,7 +78,7 @@
     </button>
 
     <!-- Header & Navigation Bar -->
-    <header class="bg-gray-900 shadow-lg fixed top-0 left-0 w-full z-50">
+    <header class="bg-[#1a1a1a] shadow-lg fixed top-0 left-0 w-full z-50">
         <nav class="container mx-auto flex items-center justify-between p-4 md:p-6">
             <a href="#" class="text-2xl font-bold text-red-500">Elite Team - Fresno BJJ</a>
             
@@ -122,13 +122,9 @@
             <h2 class="text-3xl md:text-4xl font-bold text-center text-red-500 mb-8">
                 About Us
             </h2>
-            <div class="bg-gray-800 p-6 md:p-10 rounded-lg shadow-xl text-lg md:text-xl leading-relaxed">
-                <p>
-                    Elite Team - Fresno is more than just a gym; it's a family dedicated to the art of Brazilian Jiu Jitsu. Our mission is to provide a safe, supportive, and challenging environment where students of all ages and skill levels can grow and achieve their personal goals.
-                </p>
-                <p class="mt-4">
-                    Founded by experienced instructors, our team is committed to the principles of technique, discipline, and respect. Whether you're looking to compete, get in shape, or learn self-defense, our academy is the perfect place to start your journey.
-                </p>
+            <!-- The content for this section is now managed by JavaScript for easy updates -->
+            <div id="about-content" class="bg-[#1a1a1a] p-6 md:p-10 rounded-lg shadow-xl text-lg md:text-xl leading-relaxed">
+                <!-- Content will be injected here by JavaScript -->
             </div>
         </section>
         
@@ -137,9 +133,9 @@
             <h2 class="text-3xl md:text-4xl font-bold text-center text-red-500 mb-8">
                 Class Schedule
             </h2>
-            <div class="bg-gray-800 rounded-lg shadow-xl overflow-hidden">
+            <div class="bg-[#1a1a1a] rounded-lg shadow-xl overflow-hidden">
                 <!-- IMPORTANT: To update the schedule, simply replace the image source (src) below. -->
-                <img id="schedule-image" src="https://placehold.co/1200x800/2d3748/e2e8f0?text=Your+Schedule+Image+Here" alt="Current BJJ Class Schedule" class="w-full h-auto object-cover">
+                <img id="schedule-image" src="https://placehold.co/1200x800/262626/f8f8f8?text=Your+Schedule+Image+Here" alt="Current BJJ Class Schedule" class="w-full h-auto object-cover">
             </div>
         </section>
 
@@ -150,19 +146,19 @@
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Coach 1 -->
-                <div class="bg-gray-800 rounded-lg shadow-xl overflow-hidden">
-                    <img src="https://placehold.co/600x600/2d3748/e2e8f0?text=Coach+1" alt="Coach's Name" class="w-full h-64 object-cover">
+                <div class="bg-[#1a1a1a] rounded-lg shadow-xl overflow-hidden">
+                    <img src="https://placehold.co/600x600/262626/f8f8f8?text=Marty+Robles" alt="Marty Robles" class="w-full h-64 object-cover">
                     <div class="p-6 text-center">
-                        <h3 class="text-2xl font-bold text-white">Professor John Doe</h3>
+                        <h3 class="text-2xl font-bold text-white">Professor Marty Robles</h3>
                         <p class="text-red-500 font-semibold mt-2">Head Instructor</p>
                         <p class="text-gray-400 mt-4">
-                            A highly decorated black belt with over 15 years of experience. Known for his technical precision and ability to teach all levels.
+                            Head Coach Marty Robles has been practicing BJJ for over 10 years and received his black belt from Tom Knox, Elite Team's Program Director.
                         </p>
                     </div>
                 </div>
-                <!-- Coach 2 -->
-                <div class="bg-gray-800 rounded-lg shadow-xl overflow-hidden">
-                    <img src="https://placehold.co/600x600/2d3748/e2e8f0?text=Coach+2" alt="Coach's Name" class="w-full h-64 object-cover">
+                <!-- Coach 2 (Placeholder) -->
+                <div class="bg-[#1a1a1a] rounded-lg shadow-xl overflow-hidden">
+                    <img src="https://placehold.co/600x600/262626/f8f8f8?text=Coach+2" alt="Coach's Name" class="w-full h-64 object-cover">
                     <div class="p-6 text-center">
                         <h3 class="text-2xl font-bold text-white">Coach Jane Smith</h3>
                         <p class="text-red-500 font-semibold mt-2">Kids Program Director</p>
@@ -171,9 +167,9 @@
                         </p>
                     </div>
                 </div>
-                <!-- Coach 3 -->
-                <div class="bg-gray-800 rounded-lg shadow-xl overflow-hidden">
-                    <img src="https://placehold.co/600x600/2d3748/e2e8f0?text=Coach+3" alt="Coach's Name" class="w-full h-64 object-cover">
+                <!-- Coach 3 (Placeholder) -->
+                <div class="bg-[#1a1a1a] rounded-lg shadow-xl overflow-hidden">
+                    <img src="https://placehold.co/600x600/262626/f8f8f8?text=Coach+3" alt="Coach's Name" class="w-full h-64 object-cover">
                     <div class="p-6 text-center">
                         <h3 class="text-2xl font-bold text-white">Instructor Mike Johnson</h3>
                         <p class="text-red-500 font-semibold mt-2">Advanced Class Instructor</p>
@@ -190,45 +186,95 @@
             <h2 class="text-3xl md:text-4xl font-bold text-center text-red-500 mb-8">
                 Contact & Free Trial
             </h2>
-            <div class="bg-gray-800 p-6 md:p-10 rounded-lg shadow-xl text-center">
-                <p class="text-lg md:text-xl text-gray-300">
-                    Ready to start your journey? Contact us today to schedule your free trial class!
-                </p>
-                <div class="flex flex-col md:flex-row justify-center items-center mt-6 space-y-4 md:space-y-0 md:space-x-8">
-                    <div class="text-center">
-                        <p class="text-red-500 font-bold">Address:</p>
-                        <p class="text-gray-300">123 Main Street, Fresno, CA 93701</p>
+            <div class="bg-[#1a1a1a] p-6 md:p-10 rounded-lg shadow-xl">
+                <div class="flex flex-col lg:flex-row lg:justify-between lg:items-center">
+                    <div class="lg:w-1/2 mb-8 lg:mb-0">
+                        <p class="text-lg md:text-xl text-gray-300">
+                            Ready to start your journey? Contact us today to schedule your free trial class!
+                        </p>
+                        <div class="mt-6 space-y-4">
+                            <div>
+                                <p class="text-red-500 font-bold">Address:</p>
+                                <p class="text-gray-300">4177 W Shaw Ave Suite 111, Fresno, CA 93722</p>
+                            </div>
+                            <div>
+                                <p class="text-red-500 font-bold">Phone:</p>
+                                <p class="text-gray-300">(559) 555-1234</p>
+                            </div>
+                            <div>
+                                <p class="text-red-500 font-bold">Email:</p>
+                                <p class="text-gray-300">info@eliteteamfresno.com</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="text-center">
-                        <p class="text-red-500 font-bold">Phone:</p>
-                        <p class="text-gray-300">(559) 555-1234</p>
-                    </div>
-                    <div class="text-center">
-                        <p class="text-red-500 font-bold">Email:</p>
-                        <p class="text-gray-300">info@eliteteamfresno.com</p>
+                    <div class="lg:w-1/2 flex justify-center lg:justify-end">
+                        <button class="bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
+                            Contact Us
+                        </button>
                     </div>
                 </div>
-                <button class="mt-8 bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
-                    Contact Us
-                </button>
             </div>
         </section>
 
     </main>
     
     <!-- Footer -->
-    <footer class="bg-gray-900 p-6 text-center text-gray-500">
+    <footer class="bg-[#111111] p-6 text-center text-gray-500">
+        <div class="flex justify-center items-center space-x-4 mb-4">
+            <p class="font-bold text-white">Follow Us</p>
+            <!-- Facebook Icon -->
+            <a href="https://www.facebook.com/eliteteambjj/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-red-500 transition-colors duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm3 8h-1.5c-.552 0-.853.298-.853.844v1.156h2.479l-.343 2h-2.136v6h-3v-6h-2v-2h2v-1.923c0-2.062 1.159-3.077 3.69-3.077h2.31v2z"/></svg>
+            </a>
+            <!-- Instagram Icon -->
+            <a href="https://www.instagram.com/eliteteamfresno/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-red-500 transition-colors duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.772 1.667 4.921 4.919.058 1.267.069 1.647.069 4.849 0 3.203-.012 3.584-.069 4.849-.149 3.252-1.667 4.771-4.92 4.919-1.266.058-1.647.069-4.849.069-3.204 0-3.584-.012-4.849-.069-3.251-.148-4.77-1.667-4.919-4.919-.058-1.267-.069-1.647-.069-4.849 0-3.203.012-3.584.069-4.849.149-3.251 1.667-4.77 4.919-4.919 1.266-.057 1.647-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.201-6.78 2.623-6.981 6.981-.058 1.281-.072 1.689-.072 4.948 0 3.259.014 3.668.072 4.948.201 4.357 2.623 6.78 6.981 6.981 1.28.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.201 6.782-2.623 6.981-6.981.058-1.28.072-1.689.072-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.981-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+        </div>
         <p>&copy; 2025 Elite Team - Fresno. All rights reserved.</p>
+        <p class="text-xs text-gray-600 mt-2">Made in Fresno with <span class="text-red-500">❤️</span></p>
     </footer>
 
     <!-- JavaScript for Hero Image Slideshow and Scroll-to-top button -->
     <script>
+        // Use the marked.js CDN to parse markdown content
+        const markedScript = document.createElement('script');
+        markedScript.src = 'https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js';
+        markedScript.onload = () => {
+            console.log('Marked.js loaded successfully!');
+            // Once the library is loaded, parse the content
+            renderAboutContent();
+        };
+        document.head.appendChild(markedScript);
+
+
+        // --- DYNAMIC CONTENT MANAGEMENT ---
+        // This is the content for the 'About Us' section. 
+        // You can easily update this string without changing the HTML.
+        const aboutContentMarkdown = `
+Elite Team Fresno is a Brazilian Jiu-Jitsu school that provides high-quality classes from some of the valleys greatest Jiu-Jitsu competitors. Our mission is to provide a safe, supportive, and challenging environment where students of all ages and skill levels can grow and achieve their personal goals.
+
+Head Coach Marty Robles has been practicing BJJ for over 10 years and received his black belt from Tom Knox, Elite Team's Program Director and Professor.
+        `;
+
+        // Function to render the Markdown content into the 'About Us' section
+        function renderAboutContent() {
+            const aboutContentDiv = document.getElementById('about-content');
+            if (typeof marked !== 'undefined') {
+                 // Use marked.js to convert markdown to HTML
+                aboutContentDiv.innerHTML = marked.parse(aboutContentMarkdown);
+            } else {
+                // Fallback if marked.js isn't loaded for some reason
+                aboutContentDiv.innerText = aboutContentMarkdown;
+            }
+        }
+
         // Array of image URLs for the slideshow.
         // To change the images, simply replace the URLs in this array.
         const imageUrls = [
-            'https://placehold.co/1920x1080/2f3a47/e2e8f0?text=BJJ+Training+1',
-            'https://placehold.co/1920x1080/2f3a47/e2e8f0?text=BJJ+Training+2',
-            'https://placehold.co/1920x1080/2f3a47/e2e8f0?text=BJJ+Training+3'
+            'https://placehold.co/1920x1080/262626/f8f8f8?text=BJJ+Training+1',
+            'https://placehold.co/1920x1080/262626/f8f8f8?text=BJJ+Training+2',
+            'https://placehold.co/1920x1080/262626/f8f8f8?text=BJJ+Training+3'
         ];
 
         let currentSlide = 0;
