@@ -109,6 +109,9 @@
                 <a href="#schedule" class="font-semibold text-white hover:text-red-500 transition-colors duration-300">
                     Schedule
                 </a>
+                <a href="kids.html" class="font-semibold text-white hover:text-red-500 transition-colors duration-300">
+                    Kids Program
+                </a>
                 <!-- CTA Button -->
                 <a href="#contact" class="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-6 rounded-full transition duration-300 ease-in-out transform hover:scale-105">
                     Join Now!
@@ -125,6 +128,7 @@
             <!-- Mobile Menu Links -->
             <div id="mobile-menu-links" class="mobile-menu-links md:hidden">
                 <a href="#schedule" class="block p-4 text-white hover:bg-gray-800">Schedule</a>
+                <a href="kids.html" class="block p-4 text-white hover:bg-gray-800">Kids Program</a>
                 <a href="#contact" class="block p-4 bg-red-600 text-white hover:bg-red-700">Join Now!</a>
             </div>
         </nav>
@@ -398,8 +402,7 @@
         // --- SCHEDULE MODAL ---
         const scheduleCard = document.getElementById('schedule-card');
         const scheduleModal = document.getElementById('schedule-modal');
-        const scheduleCloseBtn = scheduleModal.querySelector('.close-modal');
-
+        
         scheduleCard.addEventListener('click', () => {
             scheduleModal.classList.remove('hidden');
         });
@@ -416,6 +419,13 @@
 
         mobileMenuButton.addEventListener('click', () => {
             mobileMenuLinks.classList.toggle('active');
+        });
+
+        const mobileNavLinks = mobileMenuLinks.querySelectorAll('a');
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuLinks.classList.remove('active');
+            });
         });
         
         // Render coaches on page load
