@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Team - Kids Program</title>
+    <!-- Use the Tailwind CSS CDN for easy static site styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Add Inter font from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* This style block now only contains non-color specific rules */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="antialiased bg-gray-950 text-gray-100">
+
+    <!-- Header & Navigation Bar -->
+    <header class="bg-gray-900 shadow-lg fixed top-0 left-0 w-full z-50">
+        <nav class="container mx-auto flex items-center justify-between p-4 md:p-6 relative">
+            <!-- Left-hand side of nav: Logo and Title -->
+            <div class="flex items-center space-x-4">
+                <!-- Placeholder for the logo -->
+                <img src="logo.png" alt="Elite Team Logo" class="h-14 w-14 rounded-full">
+                <a href="index.html" class="text-2xl font-bold text-red-500">Elite Team - Fresno BJJ</a>
+            </div>
+            
+            <!-- Right-hand side of nav: Links and CTA -->
+            <div class="flex items-center space-x-4 hidden md:flex">
+                <a href="index.html#schedule" class="font-semibold text-white hover:text-red-500 transition-colors duration-300">
+                    Schedule
+                </a>
+                 <a href="#kids-program" class="font-semibold text-white hover:text-red-500 transition-colors duration-300">
+                    Kids Program
+                </a>
+                <!-- CTA Button -->
+                <a href="index.html#contact" class="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-6 rounded-full transition duration-300 ease-in-out transform hover:scale-105">
+                    Join Now!
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+            
+            <!-- Mobile Menu Links -->
+            <div id="mobile-menu-links" class="mobile-menu-links md:hidden">
+                <a href="index.html#schedule" class="block p-4 text-white hover:bg-gray-800">Schedule</a>
+                <a href="#kids-program" class="block p-4 text-white hover:bg-gray-800">Kids Program</a>
+                <a href="index.html#contact" class="block p-4 bg-red-600 text-white hover:bg-red-700">Join Now!</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="py-24">
+        <!-- Kids Program Intro Section -->
+        <section id="kids-program" class="container mx-auto px-4 md:px-8 mb-16">
+            <h1 class="text-4xl md:text-5xl font-bold text-center text-red-500 mt-16 mb-8">
+                The Elite Team Kids Program
+            </h1>
+            <div class="bg-gray-900 text-gray-200 p-6 md:p-10 rounded-lg shadow-xl text-lg md:text-xl leading-relaxed">
+                <p>
+                    Our kids' program focuses on building confidence, discipline, and respect through the art of Brazilian Jiu-Jitsu. We provide a fun and safe environment for children to learn self-defense, improve physical fitness, and develop a strong foundation for life.
+                </p>
+                <p class="mt-4">
+                    Taught by our dedicated and patient instructors, our classes are tailored to different age groups and skill levels, ensuring that every child gets the attention they need to succeed.
+                </p>
+            </div>
+        </section>
+
+        <!-- Photo Gallery Section -->
+        <section id="photos" class="container mx-auto px-4 md:px-8 mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-red-500 mb-8">
+                Photos from Class
+            </h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <img src="https://placehold.co/400x400/262626/f8f8f8?text=Kids+Photo+1" alt="Kids BJJ Class" class="w-full h-auto object-cover rounded-lg shadow-lg">
+                <img src="https://placehold.co/400x400/262626/f8f8f8?text=Kids+Photo+2" alt="Kids BJJ Class" class="w-full h-auto object-cover rounded-lg shadow-lg">
+                <img src="https://placehold.co/400x400/262626/f8f8f8?text=Kids+Photo+3" alt="Kids BJJ Class" class="w-full h-auto object-cover rounded-lg shadow-lg">
+                <img src="https://placehold.co/400x400/262626/f8f8f8?text=Kids+Photo+4" alt="Kids BJJ Class" class="w-full h-auto object-cover rounded-lg shadow-lg">
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section id="achievements" class="container mx-auto px-4 md:px-8 mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-red-500 mb-8">
+                Notable Achievements
+            </h2>
+            <div class="bg-gray-900 p-6 md:p-10 rounded-lg shadow-xl">
+                <ul class="space-y-4 text-lg md:text-xl text-gray-200 list-disc list-inside">
+                    <li>Over 10 Gold Medals won in local and regional tournaments.</li>
+                    <li>Over 15 Silver Medals won in local and regional tournaments.</li>
+                    <li>Over 20 Bronze Medals won in local and regional tournaments.</li>
+                    <li>15+ years of combined coaching experience with children.</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 p-6 text-center text-gray-500">
+        <div class="flex justify-center items-center space-x-4 mb-4">
+            <p class="font-bold text-white">Follow Us</p>
+            <!-- Facebook Icon -->
+            <a href="https://www.facebook.com/eliteteambjj/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-red-500 transition-colors duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm3 8h-1.5c-.552 0-.853.298-.853.844v1.156h2.479l-.343 2h-2.136v6h-3v-6h-2v-2h2v-1.923c0-2.062 1.159-3.077 3.69-3.077h2.31v2z"/></svg>
+            </a>
+            <!-- Instagram Icon -->
+            <a href="https://www.instagram.com/eliteteamfresno/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-red-500 transition-colors duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.772 1.667 4.921 4.919.058 1.267.069 1.647.069 4.849 0 3.203-.012 3.584-.069 4.849-.149 3.252-1.667-4.771-4.92 4.919-1.266.058-1.647.069-4.849.069-3.204 0-3.584-.012-4.849-.069-3.251-.148-4.77-1.667-4.919-4.919-.058-1.267-.069-1.647-.069-4.849 0-3.203.012-3.584.069-4.849.149-3.251 1.667-4.77 4.919-4.919 1.266-.057 1.647-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.201-6.78 2.623-6.981 6.981-.058 1.281-.072 1.689-.072 4.948 0 3.259.014 3.668.072 4.948.201 4.357 2.623 6.78 6.981 6.981 1.28.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.201 6.782-2.623 6.981-6.981.058-1.28.072-1.689.072-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.981-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+        </div>
+        <p>&copy; 2025 Elite Team - Fresno. All rights reserved.</p>
+        <p class="text-xs text-gray-600 mt-2">Made in Fresno with <span class="text-red-500">❤️</span></p>
+    </footer>
+
+    <!-- JavaScript for mobile menu -->
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenuLinks = document.getElementById('mobile-menu-links');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenuLinks.classList.toggle('active');
+        });
+    </script>
+
+</body>
+</html>
