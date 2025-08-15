@@ -3,20 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elite Team - Kids Program</title>
-    <!-- Use the Tailwind CSS CDN for easy static site styling -->
+    
+    <title>Kids BJJ & Wrestling Programs - Elite Team Fresno | Youth Martial Arts</title>
+    <meta name="description" content="Fun and safe Brazilian Jiu-Jitsu and Wrestling classes for kids in Fresno. Build confidence, discipline, and respect. Age-appropriate instruction from experienced coaches.">
+    <meta name="keywords" content="kids BJJ Fresno, youth wrestling, children martial arts, kids self defense Fresno, youth sports">
+    <meta name="author" content="Elite Team - Fresno BJJ">
+    
+    <meta property="og:title" content="Kids BJJ & Wrestling Programs - Elite Team Fresno">
+    <meta property="og:description" content="Fun Brazilian Jiu-Jitsu and Wrestling classes for kids. Build confidence and discipline in a safe environment.">
+    <meta property="og:image" content="logo.png">
+    <meta property="og:url" content="https://yourwebsite.com/kids.html">
+    <meta property="og:type" content="website">
+    
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
+    
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Add Inter font from Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* This style block now only contains non-color specific rules */
         body {
             font-family: 'Inter', sans-serif;
         }
 
-        /* Style for the mobile menu */
+        #scrollToTopBtn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 99;
+            border: none;
+            outline: none;
+            background-color: #e53e3e;
+            color: white;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 50%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
         .mobile-menu-links {
             display: none;
             flex-direction: column;
@@ -32,114 +58,404 @@
         .mobile-menu-links.active {
             display: flex;
         }
+
+        .hero-bg {
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 50%, #4a5568 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .floating-elements {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .floating-circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-circle:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            background: #ef4444;
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-circle:nth-child(2) {
+            width: 60px;
+            height: 60px;
+            background: #3b82f6;
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .floating-circle:nth-child(3) {
+            width: 40px;
+            height: 40px;
+            background: #8b5cf6;
+            bottom: 30%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
     </style>
 </head>
 <body class="antialiased bg-gray-950 text-gray-100">
 
-    <!-- Header & Navigation Bar -->
+    <button id="scrollToTopBtn" title="Go to top">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+        </svg>
+    </button>
+
     <header class="bg-gray-900 shadow-lg fixed top-0 left-0 w-full z-50">
         <nav class="container mx-auto flex items-center justify-between p-4 md:p-6 relative">
-            <!-- Left-hand side of nav: Logo and Title -->
             <div class="flex items-center space-x-4">
-                <!-- Placeholder for the logo -->
-                <img src="logo.png" alt="Elite Team Logo" class="h-14 w-14 rounded-full">
+                <img src="logo.png" alt="Elite Team BJJ Logo" class="h-14 w-14 rounded-full">
                 <a href="index.html" class="text-2xl font-bold text-red-500">Elite Team - Fresno BJJ</a>
             </div>
             
-            <!-- Right-hand side of nav: Links and CTA -->
             <div class="flex items-center space-x-4 hidden md:flex">
                 <a href="index.html#schedule" class="font-semibold text-white hover:text-red-500 transition-colors duration-300">
                     Schedule
                 </a>
-                 <a href="#kids-program" class="font-semibold text-white hover:text-red-500 transition-colors duration-300">
-                    Kids Program
+                <a href="index.html#programs" class="font-semibold text-white hover:text-red-500 transition-colors duration-300">
+                    Programs
                 </a>
-                <!-- CTA Button -->
+                <a href="#kids-program" class="font-semibold text-white hover:text-red-500 transition-colors duration-300">
+                    Kids
+                </a>
+                <a href="adults.html" class="font-semibold text-white hover:text-red-500 transition-colors duration-300">
+                    Adults
+                </a>
                 <a href="index.html#contact" class="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-6 rounded-full transition duration-300 ease-in-out transform hover:scale-105">
-                    Join Now!
+                    Free Trial
                 </a>
             </div>
 
-            <!-- Mobile Menu Button -->
-            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none p-2 rounded-md border border-gray-600" aria-label="Toggle mobile menu">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
                 </svg>
             </button>
             
-            <!-- Mobile Menu Links -->
             <div id="mobile-menu-links" class="mobile-menu-links md:hidden">
                 <a href="index.html#schedule" class="block p-4 text-white hover:bg-gray-800">Schedule</a>
-                <a href="#kids-program" class="block p-4 text-white hover:bg-gray-800">Kids Program</a>
-                <a href="index.html#contact" class="block p-4 bg-red-600 text-white hover:bg-red-700">Join Now!</a>
+                <a href="index.html#programs" class="block p-4 text-white hover:bg-gray-800">Programs</a>
+                <a href="#kids-program" class="block p-4 text-white hover:bg-gray-800">Kids</a>
+                <a href="adults.html" class="block p-4 text-white hover:bg-gray-800">Adults</a>
+                <a href="index.html#contact" class="block p-4 bg-red-600 text-white hover:bg-red-700">Free Trial</a>
             </div>
         </nav>
     </header>
 
-    <main class="py-24">
-        <!-- Kids Program Intro Section -->
-        <section id="kids-program" class="container mx-auto px-4 md:px-8 mb-16">
-            <h1 class="text-4xl md:text-5xl font-bold text-center text-red-500 mt-16 mb-8">
-                The Elite Team Kids Program
-            </h1>
-            <div class="bg-gray-900 text-gray-200 p-6 md:p-10 rounded-lg shadow-xl text-lg md:text-xl leading-relaxed">
-                <p>
-                    Our kids' program focuses on building confidence, discipline, and respect through the art of Brazilian Jiu-Jitsu. We provide a fun and safe environment for children to learn self-defense, improve physical fitness, and develop a strong foundation for life.
+    <main class="py-16 md:py-24">
+        <section class="hero-bg py-32 relative">
+            <div class="floating-elements">
+                <div class="floating-circle"></div>
+                <div class="floating-circle"></div>
+                <div class="floating-circle"></div>
+            </div>
+            <div class="container mx-auto px-4 md:px-8 text-center relative z-10">
+                <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+                    Youth <span class="text-red-500">Programs</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto">
+                    Give your child the gift of confidence, discipline, and fitness through Brazilian Jiu-Jitsu and Wrestling.
                 </p>
-                <p class="mt-4">
-                    Taught by our dedicated and patient instructors, our classes are tailored to different age groups and skill levels, ensuring that every child gets the attention they need to succeed.
-                </p>
+                <a href="#kids-program-details" class="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-10 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 text-lg">
+                    Explore Programs
+                </a>
             </div>
         </section>
 
-        <!-- Photo Gallery Section -->
+        <section id="kids-program-details" class="container mx-auto px-4 md:px-8 mb-16">
+            <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <div class="bg-gray-900 text-gray-200 p-8 rounded-lg shadow-xl">
+                    <div class="text-center mb-6">
+                        <div class="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-red-500">Kids Brazilian Jiu-Jitsu</h3>
+                        <p class="text-lg text-gray-400">Ages 5-12</p>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <h4 class="text-xl font-semibold text-white">What Your Child Will Learn:</h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <span class="text-red-500 mr-2">✓</span>
+                                Basic positions and escapes
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-red-500 mr-2">✓</span>
+                                Self-defense techniques
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-red-500 mr-2">✓</span>
+                                Discipline and respect
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-red-500 mr-2">✓</span>
+                                Problem-solving skills
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-red-500 mr-2">✓</span>
+                                Confidence building
+                            </li>
+                        </ul>
+                        
+                        <h4 class="text-xl font-semibold text-white mt-6">Benefits:</h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <span class="text-red-500 mr-2 mt-1">•</span>
+                                <span><strong>Anti-Bullying:</strong> Learn to defend yourself while avoiding conflict</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-red-500 mr-2 mt-1">•</span>
+                                <span><strong>Fitness:</strong> Improve strength, flexibility, and coordination</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-red-500 mr-2 mt-1">•</span>
+                                <span><strong>Focus:</strong> Develop concentration and attention to detail</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-gray-900 text-gray-200 p-8 rounded-lg shadow-xl">
+                    <div class="text-center mb-6">
+                        <div class="w-20 h-20 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 1.343-4 3.657-4a8 8 0 010 16z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-blue-400">Kids Wrestling</h3>
+                        <p class="text-lg text-gray-400">Ages 8-15</p>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <h4 class="text-xl font-semibold text-white">What Your Child Will Learn:</h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <span class="text-blue-400 mr-2">✓</span>
+                                Takedown techniques
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-blue-400 mr-2">✓</span>
+                                Wrestling positioning
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-blue-400 mr-2">✓</span>
+                                Mental toughness
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-blue-400 mr-2">✓</span>
+                                Competitive mindset
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-blue-400 mr-2">✓</span>
+                                Work ethic and perseverance
+                            </li>
+                        </ul>
+                        
+                        <h4 class="text-xl font-semibold text-white mt-6">Benefits:</h4>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <span class="text-blue-400 mr-2 mt-1">•</span>
+                                <span><strong>Athletic Base:</strong> Perfect foundation for all sports</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-400 mr-2 mt-1">•</span>
+                                <span><strong>Mental Strength:</strong> Build resilience and determination</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-blue-400 mr-2 mt-1">•</span>
+                                <span><strong>Complements BJJ:</strong> Excellent for takedown skills</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container mx-auto px-4 md:px-8 mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-red-500 mb-12">
+                Age-Appropriate Classes
+            </h2>
+            <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <div class="bg-gray-900 text-gray-200 p-6 rounded-lg shadow-xl text-center">
+                    <h3 class="text-xl font-bold text-red-500 mb-4">Little Grapplers</h3>
+                    <p class="text-2xl font-bold mb-2">Ages 5-7</p>
+                    <p class="text-gray-300">Focus on fun, basic movements, and following instructions. Games-based learning with emphasis on respect and listening.</p>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-6 rounded-lg shadow-xl text-center">
+                    <h3 class="text-xl font-bold text-red-500 mb-4">Youth BJJ/Wrestling</h3>
+                    <p class="text-2xl font-bold mb-2">Ages 8-12</p>
+                    <p class="text-gray-300">More structured learning with technique development, light sparring, and introduction to competition concepts.</p>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-6 rounded-lg shadow-xl text-center">
+                    <h3 class="text-xl font-bold text-red-500 mb-4">Teen Program</h3>
+                    <p class="text-2xl font-bold mb-2">Ages 13-17</p>
+                    <p class="text-gray-300">Advanced techniques, serious training, competition preparation, and leadership development.</p>
+                </div>
+            </div>
+        </section>
+
         <section id="photos" class="container mx-auto px-4 md:px-8 mb-16">
             <h2 class="text-3xl md:text-4xl font-bold text-center text-red-500 mb-8">
-                Photos from Class
+                Photos from Our Classes
             </h2>
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                <img src="https://placehold.co/400x400/262626/f8f8f8?text=Kids+Photo+1" alt="Kids BJJ Class" class="w-full h-auto object-cover rounded-lg shadow-lg">
-                <img src="https://placehold.co/400x400/262626/f8f8f8?text=Kids+Photo+2" alt="Kids BJJ Class" class="w-full h-auto object-cover rounded-lg shadow-lg">
-                <img src="https://placehold.co/400x400/262626/f8f8f8?text=Kids+Photo+3" alt="Kids BJJ Class" class="w-full h-auto object-cover rounded-lg shadow-lg">
-                <img src="https://placehold.co/400x400/262626/f8f8f8?text=Kids+Photo+4" alt="Kids BJJ Class" class="w-full h-auto object-cover rounded-lg shadow-lg">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
+                <img src="https://placehold.co/400x400/262626/f8f8f8?text=Kids+BJJ+1" alt="Kids BJJ Class" class="w-full h-auto object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer">
+                <img src="https://placehold.co/400x400/262626/f8f8f8?text=Kids+Wrestling" alt="Kids Wrestling Class" class="w-full h-auto object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer">
+                <img src="https://placehold.co/400x400/262626/f8f8f8?text=Kids+Training" alt="Kids Training" class="w-full h-auto object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer">
+                <img src="https://placehold.co/400x400/262626/f8f8f8?text=Tournament" alt="Kids Tournament" class="w-full h-auto object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer">
+                <img src="https://placehold.co/400x400/262626/f8f8f8?text=Belt+Ceremony" alt="Belt Ceremony" class="w-full h-auto object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer">
+                <img src="https://placehold.co/400x400/262626/f8f8f8?text=Team+Photo" alt="Team Photo" class="w-full h-auto object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer">
+                <img src="https://placehold.co/400x400/262626/f8f8f8?text=Kids+Sparring" alt="Kids Sparring" class="w-full h-auto object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer">
+                <img src="https://placehold.co/400x400/262626/f8f8f8?text=Awards" alt="Awards Ceremony" class="w-full h-auto object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-300 cursor-pointer">
             </div>
         </section>
 
-        <!-- Achievements Section -->
         <section id="achievements" class="container mx-auto px-4 md:px-8 mb-16">
             <h2 class="text-3xl md:text-4xl font-bold text-center text-red-500 mb-8">
-                Notable Achievements
+                Student Achievements
             </h2>
-            <div class="bg-gray-900 p-6 md:p-10 rounded-lg shadow-xl">
-                <ul class="space-y-4 text-lg md:text-xl text-gray-200 list-disc list-inside">
-                    <li>Over 10 Gold Medals won in local and regional tournaments.</li>
-                    <li>Over 15 Silver Medals won in local and regional tournaments.</li>
-                    <li>Over 20 Bronze Medals won in local and regional tournaments.</li>
-                    <li>15+ years of combined coaching experience with children.</li>
-                </ul>
+            <div class="bg-gray-900 text-gray-200 p-6 md:p-10 rounded-lg shadow-xl max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div>
+                        <h3 class="text-xl font-bold text-red-500 mb-4">Tournament Success</h3>
+                        <ul class="space-y-2 text-lg">
+                            <li class="flex items-center">
+                                <span class="text-yellow-500 mr-2">🥇</span>
+                                Over 50 Gold Medals won across BJJ and Wrestling
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-gray-400 mr-2">🥈</span>
+                                Over 40 Silver Medals earned
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-yellow-600 mr-2">🥉</span>
+                                Over 35 Bronze Medals achieved
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-red-500 mb-4">Character Development</h3>
+                        <ul class="space-y-2 text-lg">
+                            <li class="flex items-center">
+                                <span class="text-red-500 mr-2">👨‍🎓</span>
+                                Improved grades reported by parents
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-red-500 mr-2">🎯</span>
+                                Increased confidence and leadership
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-red-500 mr-2">🤝</span>
+                                Better social skills and friendships
+                            </li>
+                            <li class="flex items-center">
+                                <span class="text-red-500 mr-2">💪</span>
+                                Enhanced physical fitness and health
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container mx-auto px-4 md:px-8 mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-red-500 mb-12">
+                What Parents Say
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div class="bg-gray-900 text-gray-200 p-6 rounded-lg shadow-xl">
+                    <p class="text-lg mb-4 italic">"My son has been training here for 2 years and the transformation has been incredible. His confidence, discipline, and respect for others has grown tremendously. The coaches truly care about each child's development."</p>
+                    <p class="text-red-500 font-semibold">- Sarah M., Parent</p>
+                </div>
+                <div class="bg-gray-900 text-gray-200 p-6 rounded-lg shadow-xl">
+                    <p class="text-lg mb-4 italic">"Elite Team provides the perfect environment for kids to learn martial arts. Both the BJJ and wrestling programs are excellent, and my daughter loves coming to class. The coaches are patient and professional."</p>
+                    <p class="text-red-500 font-semibold">- Mike R., Parent</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="hero-bg py-20 relative">
+            <div class="floating-elements">
+                <div class="floating-circle"></div>
+                <div class="floating-circle"></div>
+                <div class="floating-circle"></div>
+            </div>
+            <div class="container mx-auto px-4 md:px-8 text-center relative z-10">
+                <h2 class="text-4xl md:text-6xl font-bold text-white mb-8">
+                    Start Their Journey <span class="text-red-500">Today</span>
+                </h2>
+                <p class="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto">
+                    Give your child the tools to succeed. A free trial class is the perfect way to start.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                    <a href="index.html#contact" class="bg-red-600 hover:bg-red-700 text-white font-bold py-4 px-10 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 text-lg">
+                        Schedule Free Trial
+                    </a>
+                    <a href="index.html#contact" class="border-2 border-red-600 text-red-600 font-bold py-4 px-10 rounded-full hover:bg-red-600 hover:text-white transition duration-300 ease-in-out text-lg">
+                        Contact Us
+                    </a>
+                </div>
+                <p class="text-gray-400 mt-8 text-lg">
+                    No experience required • All ages and fitness levels welcome • First class FREE
+                </p>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="bg-gray-900 p-6 text-center text-gray-500">
         <div class="flex justify-center items-center space-x-4 mb-4">
             <p class="font-bold text-white">Follow Us</p>
-            <!-- Facebook Icon -->
             <a href="https://www.facebook.com/eliteteambjj/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-red-500 transition-colors duration-300">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm3 8h-1.5c-.552 0-.853.298-.853.844v1.156h2.479l-.343 2h-2.136v6h-3v-6h-2v-2h2v-1.923c0-2.062 1.159-3.077 3.69-3.077h2.31v2z"/></svg>
             </a>
-            <!-- Instagram Icon -->
             <a href="https://www.instagram.com/eliteteamfresno/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-red-500 transition-colors duration-300">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.772 1.667 4.921 4.919.058 1.267.069 1.647.069 4.849 0 3.203-.012 3.584-.069 4.849-.149 3.252-1.667-4.771-4.92 4.919-1.266.058-1.647.069-4.849.069-3.204 0-3.584-.012-4.849-.069-3.251-.148-4.77-1.667-4.919-4.919-.058-1.267-.069-1.647-.069-4.849 0-3.203.012-3.584.069-4.849.149-3.251 1.667-4.77 4.919-4.919 1.266-.057 1.647-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.201-6.78 2.623-6.981 6.981-.058 1.281-.072 1.689-.072 4.948 0 3.259.014 3.668.072 4.948.201 4.357 2.623 6.78 6.981 6.981 1.28.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.201 6.782-2.623 6.981-6.981.058-1.28.072-1.689.072-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.981-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.772 1.667 4.921 4.919.058 1.267.069 1.647.069 4.849 0 3.203-.012 3.584-.069 4.849-.149 3.252-1.667-4.771-4.92 4.919-1.266.058-1.647.069-4.849.069-3.204 0-3.584-.012-4.849-.069-3.251-.148-4.77-1.667-4.919-4.919-.058-1.267-.069-1.647-.069-4.849 0-3.203.012-3.584.069-4.849.149-3.251 1.667-4.70 4.919-4.919 1.266-.057 1.647-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.201-6.78 2.623-6.981 6.981-.058 1.281-.072 1.689-.072 4.948 0 3.259.014 3.668.072 4.948.201 4.357 2.623 6.78 6.981 6.981 1.28.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.201 6.782-2.623 6.981-6.981.058-1.28.072-1.689.072-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.981-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
             </a>
         </div>
         <p>&copy; 2025 Elite Team - Fresno. All rights reserved.</p>
         <p class="text-xs text-gray-600 mt-2">Made in Fresno with <span class="text-red-500">❤️</span></p>
     </footer>
 
-    <!-- JavaScript for mobile menu -->
     <script>
+        // Scroll to Top Button
+        const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+        window.onscroll = function() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                scrollToTopBtn.style.display = "block";
+            } else {
+                scrollToTopBtn.style.display = "none";
+            }
+        };
+
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Mobile Menu Toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenuLinks = document.getElementById('mobile-menu-links');
 
