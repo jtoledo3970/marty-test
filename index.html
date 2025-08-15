@@ -3,7 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elite Team - Fresno BJJ</title>
+    
+    <!-- SEO Meta Tags -->
+    <title>Elite Team - Fresno BJJ | Brazilian Jiu-Jitsu Training | Free Trial</title>
+    <meta name="description" content="Elite Team Fresno offers world-class Brazilian Jiu-Jitsu instruction in Fresno, CA. Train with experienced black belt instructors. Free trial class available!">
+    <meta name="keywords" content="BJJ Fresno, Brazilian Jiu Jitsu, martial arts Fresno, MMA training, Elite Team, Marty Robles, BJJ classes">
+    <meta name="author" content="Elite Team - Fresno BJJ">
+    
+    <!-- Open Graph (Social Media) Tags -->
+    <meta property="og:title" content="Elite Team - Fresno BJJ | Brazilian Jiu-Jitsu Training">
+    <meta property="og:description" content="Train with the best BJJ instructors in Fresno, CA. Free trial classes available!">
+    <meta property="og:image" content="logo.png">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Elite Team - Fresno BJJ">
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Elite Team - Fresno BJJ">
+    <meta name="twitter:description" content="World-class Brazilian Jiu-Jitsu training in Fresno">
+    <meta name="twitter:image" content="logo.png">
+    
+    <!-- Local Business Schema (for Google) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SportsClub",
+      "name": "Elite Team - Fresno BJJ",
+      "image": "logo.png",
+      "description": "Brazilian Jiu-Jitsu training school in Fresno, California",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "4177 W Shaw Ave Suite 111",
+        "addressLocality": "Fresno",
+        "addressRegion": "CA",
+        "postalCode": "93722",
+        "addressCountry": "US"
+      },
+      "telephone": "(559) 555-1234",
+      "email": "info@eliteteamfresno.com",
+      "url": "https://yourwebsite.com",
+      "priceRange": "$$",
+      "sport": "Brazilian Jiu-Jitsu"
+    }
+    </script>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
+    
     <!-- Use the Tailwind CSS CDN for easy static site styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Add Inter font from Google Fonts -->
@@ -11,7 +59,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* This style block now only contains non-color specific rules */
         body {
             font-family: 'Inter', sans-serif;
         }
@@ -19,7 +66,7 @@
         /* Custom CSS for the hero image slideshow */
         .slide-container {
             position: relative;
-            height: 80vh; /* Adjust height as needed */
+            height: 80vh;
             overflow: hidden;
         }
         .slide {
@@ -42,7 +89,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent overlay */
+            background-color: rgba(0, 0, 0, 0.6);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -50,16 +97,16 @@
             text-align: center;
             padding: 2rem;
         }
-        /* Style for the scroll-to-top button */
+
         #scrollToTopBtn {
-            display: none; /* Hidden by default */
+            display: none;
             position: fixed;
             bottom: 20px;
             right: 20px;
             z-index: 99;
             border: none;
             outline: none;
-            background-color: #e53e3e; /* Red color */
+            background-color: #e53e3e;
             color: white;
             cursor: pointer;
             padding: 15px;
@@ -67,7 +114,6 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        /* Style for the mobile menu */
         .mobile-menu-links {
             display: none;
             flex-direction: column;
@@ -99,8 +145,7 @@
         <nav class="container mx-auto flex items-center justify-between p-4 md:p-6 relative">
             <!-- Left-hand side of nav: Logo and Title -->
             <div class="flex items-center space-x-4">
-                <!-- Placeholder for the logo -->
-                <img src="logo.png" alt="Elite Team Logo" class="h-14 w-14 rounded-full">
+                <img src="logo.png" alt="Elite Team BJJ Logo" class="h-14 w-14 rounded-full">
                 <a href="#" class="text-2xl font-bold text-red-500">Elite Team - Fresno BJJ</a>
             </div>
             
@@ -109,17 +154,23 @@
                 <a href="#schedule" class="font-semibold text-white hover:text-red-500 transition-colors duration-300">
                     Schedule
                 </a>
+                <a href="#programs" class="font-semibold text-white hover:text-red-500 transition-colors duration-300">
+                    Programs
+                </a>
                 <a href="kids.html" class="font-semibold text-white hover:text-red-500 transition-colors duration-300">
-                    Kids Program
+                    Kids
+                </a>
+                <a href="adults.html" class="font-semibold text-white hover:text-red-500 transition-colors duration-300">
+                    Adults
                 </a>
                 <!-- CTA Button -->
                 <a href="#contact" class="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-6 rounded-full transition duration-300 ease-in-out transform hover:scale-105">
-                    Join Now!
+                    Free Trial
                 </a>
             </div>
 
             <!-- Mobile Menu Button -->
-            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none p-2 rounded-md border border-gray-600" aria-label="Toggle mobile menu">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
                 </svg>
@@ -128,8 +179,10 @@
             <!-- Mobile Menu Links -->
             <div id="mobile-menu-links" class="mobile-menu-links md:hidden">
                 <a href="#schedule" class="block p-4 text-white hover:bg-gray-800">Schedule</a>
-                <a href="kids.html" class="block p-4 text-white hover:bg-gray-800">Kids Program</a>
-                <a href="#contact" class="block p-4 bg-red-600 text-white hover:bg-red-700">Join Now!</a>
+                <a href="#programs" class="block p-4 text-white hover:bg-gray-800">Programs</a>
+                <a href="kids.html" class="block p-4 text-white hover:bg-gray-800">Kids</a>
+                <a href="adults.html" class="block p-4 text-white hover:bg-gray-800">Adults</a>
+                <a href="#contact" class="block p-4 bg-red-600 text-white hover:bg-red-700">Free Trial</a>
             </div>
         </nav>
     </header>
@@ -137,15 +190,14 @@
     <!-- Hero Section with Image Slideshow -->
     <section id="hero" class="relative">
         <div class="slide-container">
-            <!-- The slides are dynamically created by JavaScript, but you can add them here manually too -->
-            <!-- Image URLs are defined in the JS section below for easy editing -->
+            <!-- The slides are dynamically created by JavaScript -->
         </div>
         <div class="slide-overlay">
             <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">
                 Elite Team - Fresno BJJ
             </h1>
             <p class="text-lg md:text-xl text-gray-300 max-w-2xl">
-                Train with the best, become the best. Offering world-class instruction in Brazilian Jiu Jitsu.
+                Train with the best, become the best. Offering world-class instruction in Brazilian Jiu Jitsu for all ages and skill levels.
             </p>
             <a href="#contact" class="mt-8 bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105">
                 Start Your Free Trial
@@ -160,31 +212,73 @@
             <h2 class="text-3xl md:text-4xl font-bold text-center text-red-500 mb-8">
                 About Us
             </h2>
-            <div class="bg-gray-900 text-gray-200 p-6 md:p-10 rounded-lg shadow-xl text-lg md:text-xl leading-relaxed">
-                <!-- About Us content is now a simple, readable block of paragraphs -->
+            <div class="bg-gray-900 text-gray-200 p-6 md:p-10 rounded-lg shadow-xl text-lg md:text-xl leading-relaxed max-w-4xl mx-auto">
                 <p>
                     Elite Team Fresno is a Brazilian Jiu-Jitsu school that provides high-quality classes from some of the valley's greatest Jiu-Jitsu competitors. Our mission is to provide a safe, supportive, and challenging environment where students of all ages and skill levels can grow and achieve their personal goals.
                 </p>
                 <p class="mt-4">
-                    Head Coach Marty Robles has been practicing BJJ for over 10 years and received his black belt from Tom Knox, Elite Team's Program Director and Professor.
+                    Head Coach Marty Robles has been practicing BJJ for over 10 years and received his black belt from Tom Knox, Elite Team's Program Director and Professor. Whether you're looking to get in shape, learn self-defense, or compete at the highest levels, we have the expertise to help you succeed.
                 </p>
             </div>
         </section>
+
+        <!-- Programs Overview Section -->
+        <section id="programs" class="container mx-auto px-4 md:px-8 mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-red-500 mb-12">
+                Our Programs
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <!-- Kids Programs -->
+                <div class="bg-gray-900 text-gray-200 p-6 rounded-lg shadow-xl">
+                    <h3 class="text-2xl font-bold text-red-500 mb-4">Youth Programs</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="text-xl font-semibold mb-2">Kids BJJ (Ages 5-12)</h4>
+                            <p class="text-gray-300">Build confidence, discipline, and respect through Brazilian Jiu-Jitsu. Perfect for developing coordination, fitness, and anti-bullying skills.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold mb-2">Kids Wrestling (Ages 8-15)</h4>
+                            <p class="text-gray-300">Traditional wrestling fundamentals focused on takedowns, positioning, and mental toughness. Great complement to BJJ training.</p>
+                        </div>
+                    </div>
+                    <a href="kids.html" class="inline-block mt-6 bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-6 rounded-full transition duration-300">
+                        Learn More
+                    </a>
+                </div>
+
+                <!-- Adult Programs -->
+                <div class="bg-gray-900 text-gray-200 p-6 rounded-lg shadow-xl">
+                    <h3 class="text-2xl font-bold text-red-500 mb-4">Adult Programs</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <h4 class="text-xl font-semibold mb-2">Fundamentals (Gi & No-Gi)</h4>
+                            <p class="text-gray-300">Perfect for beginners. Learn basic positions, escapes, and submissions in a supportive environment.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-semibold mb-2">Advanced (Gi & No-Gi)</h4>
+                            <p class="text-gray-300">For experienced students ready to refine techniques and develop advanced strategies for competition or self-defense.</p>
+                        </div>
+                    </div>
+                    <a href="adults.html" class="inline-block mt-6 bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-6 rounded-full transition duration-300">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+        </section>
         
-        <!-- Schedule Section - This is an image for easy updates -->
+        <!-- Schedule Section -->
         <section id="schedule" class="container mx-auto px-4 md:px-8 mb-16">
             <h2 class="text-3xl md:text-4xl font-bold text-center text-red-500 mb-8">
                 Class Schedule
             </h2>
             <div id="schedule-card" class="bg-gray-900 rounded-lg shadow-xl overflow-hidden cursor-pointer">
-                <!-- IMPORTANT: To update the schedule, simply replace the image source (src) below. -->
-                <img id="schedule-image" src="schedule.jpg" alt="Current BJJ Class Schedule" class="w-full h-auto object-cover">
+                <img id="schedule-image" src="schedule.jpg" alt="Elite Team BJJ Class Schedule" class="w-full h-auto object-cover">
             </div>
             <!-- Schedule Modal -->
             <div id="schedule-modal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-[100] hidden">
                 <div class="fixed top-4 right-4 text-white hover:text-red-500 close-modal cursor-pointer text-4xl leading-none z-[101]">&times;</div>
                 <div class="bg-gray-900 rounded-lg shadow-xl max-w-5xl w-full relative m-4">
-                    <img id="schedule-modal-image" src="schedule.jpg" alt="Current BJJ Class Schedule" class="w-full h-auto object-cover rounded-lg">
+                    <img id="schedule-modal-image" src="schedule.jpg" alt="Elite Team BJJ Class Schedule" class="w-full h-auto object-cover rounded-lg">
                 </div>
             </div>
         </section>
@@ -204,7 +298,7 @@
             <h2 class="text-3xl md:text-4xl font-bold text-center text-red-500 mb-8">
                 Contact & Free Trial
             </h2>
-            <div class="bg-gray-900 p-6 md:p-10 rounded-lg shadow-xl">
+            <div class="bg-gray-900 p-6 md:p-10 rounded-lg shadow-xl max-w-5xl mx-auto">
                 <div class="flex flex-col lg:flex-row lg:justify-between lg:items-center">
                     <div class="lg:w-1/2 mb-8 lg:mb-0">
                         <p class="text-lg md:text-xl text-gray-300">
@@ -246,28 +340,23 @@
             </a>
             <!-- Instagram Icon -->
             <a href="https://www.instagram.com/eliteteamfresno/" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-red-500 transition-colors duration-300">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.772 1.667 4.921 4.919.058 1.267.069 1.647.069 4.849 0 3.203-.012 3.584-.069 4.849-.149 3.252-1.667-4.771-4.92 4.919-1.266.058-1.647.069-4.849.069-3.204 0-3.584-.012-4.849-.069-3.251-.148-4.77-1.667-4.919-4.919-.058-1.267-.069-1.647-.069-4.849 0-3.203.012-3.584.069-4.849.149-3.251 1.667-4.77 4.919-4.919 1.266-.057 1.647-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.201-6.78 2.623-6.981 6.981-.058 1.281-.072 1.689-.072 4.948 0 3.259.014 3.668.072 4.948.201 4.357 2.623 6.78 6.981 6.981 1.28.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.201 6.782-2.623 6.981-6.981.058-1.28.072-1.689.072-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.981-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.772 1.667 4.921 4.919.058 1.267.069 1.647.069 4.849 0 3.203-.012 3.584-.069 4.849-.149 3.252-1.667-4.771-4.92 4.919-1.266.058-1.647.069-4.849.069-3.204 0-3.584-.012-4.849-.069-3.251-.148-4.77-1.667-4.919-4.919-.058-1.267-.069-1.647-.069-4.849 0-3.203.012-3.584.069-4.849.149-3.251 1.667-4.70 4.919-4.919 1.266-.057 1.647-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.201-6.78 2.623-6.981 6.981-.058 1.281-.072 1.689-.072 4.948 0 3.259.014 3.668.072 4.948.201 4.357 2.623 6.78 6.981 6.981 1.28.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.201 6.782-2.623 6.981-6.981.058-1.28.072-1.689.072-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.981-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
             </a>
         </div>
         <p>&copy; 2025 Elite Team - Fresno. All rights reserved.</p>
         <p class="text-xs text-gray-600 mt-2">Made in Fresno with <span class="text-red-500">❤️</span></p>
     </footer>
 
-    <!-- All coach modals are dynamically generated in the script below -->
-
     <!-- JavaScript for Hero Image Slideshow and Coach Bio Modals -->
     <script>
-        // --- DYNAMIC CONTENT MANAGEMENT ---
         // Array of image URLs for the slideshow.
-        // To change the images, simply replace the URLs in this array.
         const imageUrls = [
             'https://placehold.co/1920x1080/262626/f8f8f8?text=BJJ+Training+1',
             'https://placehold.co/1920x1080/262626/f8f8f8?text=BJJ+Training+2',
             'https://placehold.co/1920x1080/262626/f8f8f8?text=BJJ+Training+3'
         ];
         
-        // Coach data array. Add more objects to this array to add more coaches.
-        // You can easily update all coach info here without changing the HTML structure.
+        // Coach data array
         const coachesData = [
             {
                 name: 'Marty Robles',
@@ -321,7 +410,6 @@
 
         // Function to dynamically render coach cards and modals
         function renderCoaches() {
-            // Clear existing coaches
             coachesContainer.innerHTML = '';
             
             coachesData.forEach((coach, index) => {
@@ -358,7 +446,7 @@
                     modal.classList.remove('hidden');
                 });
 
-                // Add event listener to close the modal by clicking the backdrop
+                // Add event listener to close the modal
                 modal.addEventListener('click', (event) => {
                     if (event.target === modal || event.target.closest('.close-modal')) {
                         modal.classList.add('hidden');
@@ -367,7 +455,6 @@
             });
         }
         
-        // --- PAGE INITIALIZATION ---
         // Initialize slides
         imageUrls.forEach((url, index) => {
             createSlide(url, index === 0);
@@ -384,7 +471,7 @@
         // Automatically change slide every 5 seconds
         setInterval(nextSlide, 5000);
 
-        // --- SCROLL TO TOP BUTTON ---
+        // Scroll to Top Button
         const scrollToTopBtn = document.getElementById("scrollToTopBtn");
 
         window.onscroll = function() {
@@ -399,7 +486,7 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // --- SCHEDULE MODAL ---
+        // Schedule Modal
         const scheduleCard = document.getElementById('schedule-card');
         const scheduleModal = document.getElementById('schedule-modal');
         
@@ -413,7 +500,7 @@
             }
         });
 
-        // --- MOBILE MENU TOGGLE ---
+        // Mobile Menu Toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenuLinks = document.getElementById('mobile-menu-links');
 
